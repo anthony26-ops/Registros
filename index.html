@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro Voluntario de Actualizaciones</title>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background-decor">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+  </div>
+
+  <main class="app-container">
+    <div class="card" id="form-card">
+      <div class="card-header">
+        <h1>Registro de Actualizaciones</h1>
+        <p class="subtitle">Regístrate para recibir información y novedades directamente en tu teléfono.</p>
+      </div>
+
+      <form id="registration-form" novalidate>
+        <!-- Name Field -->
+        <div class="form-group">
+          <label for="name">Nombre Completo</label>
+          <div class="input-wrapper">
+            <input type="text" id="name" name="name" required placeholder="Ej. María López">
+          </div>
+          <span class="error-message" id="name-error"></span>
+        </div>
+
+        <!-- Phone Field -->
+        <div class="form-group">
+          <label for="phone">Número de Teléfono</label>
+          <div class="input-wrapper">
+            <input type="tel" id="phone" name="phone" required placeholder="Ej. +502 5555 1234">
+          </div>
+          <p class="input-hint">Incluye el código de país (ej. +502, +34, +1) si es necesario.</p>
+          <span class="error-message" id="phone-error"></span>
+        </div>
+
+        <!-- Consent Checkbox -->
+        <div class="form-group checkbox-group">
+          <label class="checkbox-container">
+            <input type="checkbox" id="consent" name="consent" required>
+            <span class="checkmark"></span>
+            <span class="checkbox-text">Acepto que me contacten por WhatsApp/SMS sobre este servicio.</span>
+          </label>
+          <span class="error-message" id="consent-error"></span>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" id="submit-btn">
+          <span>Enviar Registro</span>
+          <div class="spinner" id="btn-spinner"></div>
+        </button>
+
+        <!-- General Error Alert -->
+        <div class="alert alert-error" id="general-error" style="display: none;"></div>
+      </form>
+
+      <!-- Brief Privacy Policy -->
+      <footer class="privacy-policy">
+        <p><strong>Información sobre Protección de Datos:</strong> Los datos recolectados se utilizarán únicamente con el fin de enviarle información y novedades sobre este servicio mediante WhatsApp o SMS. Su consentimiento es totalmente voluntario y puede revocarlo en cualquier momento. No compartimos sus datos con terceros.</p>
+      </footer>
+    </div>
+
+    <!-- Success Message Container -->
+    <div class="card card-success" id="success-card" style="display: none;">
+      <div class="success-icon-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="success-icon">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <h2>¡Registro Completado!</h2>
+      <p class="success-message">Muchas gracias por tu interés. Tus datos han sido registrados de forma segura y voluntaria. Pronto recibirás nuestras comunicaciones a través de WhatsApp o SMS.</p>
+      <button id="reset-btn" class="btn-secondary">Registrar otro número</button>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
